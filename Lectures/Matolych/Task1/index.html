@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 1</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <form>
+        <label for="text">
+            <h1>Text area:</h1>
+            <textarea id="text" name="text">Hello, World</textarea>
+        </label><br />
+        <input type="submit" value="Calculate">
+    </form>
+    <div class="output">
+        Number of words: <input type="number" id="num" readonly><br />
+        Length of the maximal word: <input type="number" id="max" readonly><br />
+        Length of the minimum word: <input type="number" id="min" readonly><br />
+        Average length of words: <input type="number" id="avg" readonly>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
