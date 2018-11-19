@@ -15,6 +15,10 @@ body {
     background-color: white;
 }
 
+.subtitle {
+    min-width: 250px;
+}
+
 aside, section {
     float: left;
     padding: 15px;
@@ -40,7 +44,7 @@ article:first-child > :first-child {
 }
 
 .bar {
-    max-width: 25%;
+    max-width: 35%;
     background-color: #86fde8;
 }
 
@@ -76,6 +80,8 @@ article:first-child > :first-child {
 .interest {
     border: 1px solid white;
     padding: 5px;
+    display: inline-block;
+    margin: 3px;
 }
 
 /* languages */
@@ -86,7 +92,7 @@ article:first-child > :first-child {
 
 .lang {
     display: inline-block;
-    padding-right: 25px;
+    margin: 0 20px 20px 0;
 }
 
 .lang > p:first-child {
@@ -95,9 +101,13 @@ article:first-child > :first-child {
 
 /* feedback */
 
+article:last-child > :first-child {
+    margin-top: 0;
+}
+
 form label {
     display: inline-block;
-    min-width: 10%;
+    width: 75px;
 }
 
 label + input, label + textarea {
