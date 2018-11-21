@@ -1,0 +1,80 @@
+.calendar{
+   
+    box-sizing: border-box;
+    padding: 0;
+    width: 284px;
+}
+td,th{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+th{
+    color: white;
+}
+.day{
+    
+   
+    color:gray;
+  
+}
+
+.displayedMonth{
+    color: white;
+}
+.displayedMonth:hover{
+    border: 1px solid white;
+}
+.selected{
+    border: 2px solid #4785e8;
+}
+.currentDay{
+    background-color: #4785e8;
+}
+.wrapper{
+    width: 285px;
+    background-color: #b0caf4;
+
+}
+.calendarSwitcher{
+    width: 100%;
+    font-size: 25px;
+    
+}
+.calendarSwitcher .calendarInfo{
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+    box-sizing: border-box;
+    color: #4785e8;
+}
+.calendarSwitcher .switchButton.Right{
+    float: right;
+}
+.calendarSwitcher .switchButton.Left{
+    float: left;
+}
+.calendarSwitcher .switchButton
+{
+  
+    background-color:  #b0caf4;
+    font-size: 20px;
+    color: white;
+    border:0;
+}
+.calendarSwitcher .switchButton:hover
+{
+background-color:rgba(255, 255, 255, 0.4);
+}
+
+.weekend.displayedMonth{
+    color:red;
+}
+.weekend{
+    color: #b2696b;
+}
