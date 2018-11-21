@@ -1,0 +1,65 @@
+.calendar {
+    background: #12c2e9;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    color: white;
+}
+
+/* position controls on the right */
+.header div { 
+    float: right;
+}
+
+.control {
+    border: none;
+    background: #12c2e9;
+    color: white;
+    cursor: pointer;
+}
+
+.control:hover {
+    color: black;
+}
+
+.control:focus {
+    outline: none;
+}
+
+.control:last-child {
+    padding-right: 0;
+}
+
+.dates {
+    background: white;
+    text-align: center;
+}
+
+.dates, .dates th, .dates td {
+    border: 1px solid #bdc3c7;
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+.unavailable {
+    opacity: 0.5;
+}
+
+.weekend {
+    color: #f64f59;
+}
+
+.today {
+    color: #12c2e9;
+}
+
+.dates td:hover {
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #12c2e9;
+    color: white;
+}
