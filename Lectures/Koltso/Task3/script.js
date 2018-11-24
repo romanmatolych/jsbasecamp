@@ -31,7 +31,7 @@ class Calendar {
      * Show current month
      */
     showCurrent() {
-        this.showMonth(this.currentYear, this.currentMonth);
+        this.showMonth(this.currentYear, this.currentMonth, this.currentDay);
     }
     /**
      * Goes to next month
