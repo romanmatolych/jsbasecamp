@@ -127,10 +127,10 @@ function fillCalendar(dates, today) {
   for (let i = 0; i < length; i++) {
     actDays[i].addEventListener('click', addTask);
   }
-  let sunDays = document.querySelectorAll(".cld-day");
+  let sunDays = document.querySelectorAll('.cld-day');
   length = sunDays.length;
   for (let i = 0; i < length; i += DAYS) {
-    sunDays[i].style.color = "#B24F5C";
+    sunDays[i].className += ' cld-sun';
   }
 }
 /**
@@ -158,6 +158,12 @@ function moveCldRight() {
  * @param {event} e
  */
 function addTask(e) {
+  let changed = document.getElementsByClassName('change');
+  for (let i = 0; i < changed.length; i++) {
+    if (changed[i] !== e.currentTarget) {
+      changed[i].classList.remove('change');
+    }
+  }
   let elem = e.currentTarget;
   elem.className += ' change';
   let addTasks = document.getElementById('addTasks');
