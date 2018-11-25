@@ -80,7 +80,7 @@ class Calendar {
 
     // Draw dates area
     fill(dates) {
-        let tbody = this.elem.children[1].children[1];
+        let tbody = this.elem.children[1].tBodies[0];
         if (!tbody) {
             tbody = document.createElement("tbody");
             this.elem.children[1].appendChild(tbody);
@@ -102,9 +102,9 @@ class Calendar {
                 
                 td.addEventListener("click", event => {
                     // Select only one day at a time
-                    Array.prototype.forEach.call(tbody.children, r => {
-                        for (let i = 0; i < r.children.length; i++)
-                            r.children[i].classList.remove("selected");
+                    Array.prototype.forEach.call(tbody.rows, r => {
+                        for (let i = 0; i < r.cells.length; i++)
+                            r.cells[i].classList.remove("selected");
                     });
                     event.target.classList.toggle("selected");
                 });
@@ -129,7 +129,7 @@ class Calendar {
         // display weekdays
         let tr = document.createElement("tr");
         this.elem.children[1] // table
-            .children[0] // thead
+            .tHead
             .appendChild(tr);
         dates.slice(0, 7) // weekdays
             .map(d => d.toLocaleString(navigator.language || navigator.userLanguage, // get locale
