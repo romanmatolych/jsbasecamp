@@ -73,11 +73,13 @@ td {
 .cld-today {
   box-shadow: 0 3px 6px 2px #aaaaaa;
   box-sizing: content-box;
+  color: var(--cld-bg-color);
   border: 4px;
   transform: scale(1.15);
 }
 .cld-today > div {
   font-size: 0.5em;
+  color: #000000;
 }
 .change {
   background-color: var(--cld-bg-color);
