@@ -127,6 +127,11 @@ function fillCalendar(dates, today) {
   for (let i = 0; i < length; i++) {
     actDays[i].addEventListener('click', addTask);
   }
+  let sunDays = document.querySelectorAll(".cld-day");
+  length = sunDays.length;
+  for (let i = 0; i < length; i += DAYS) {
+    sunDays[i].style.color = "#B24F5C";
+  }
 }
 /**
  * move calendar back
