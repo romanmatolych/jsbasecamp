@@ -1,0 +1,126 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 15px;
+  background: #eee;
+}
+
+.calendar {
+  user-select: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.calendar-wrapper {
+  width: 300px;
+  height: 300px;
+  background: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px #ddd;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: #f00;
+  color: #fff;
+  height: 65px;
+  font-size: 12px;
+  padding: 30px 10px 5px;
+}
+
+.month-name {
+  text-transform: capitalize;
+}
+
+.prev-month,
+.next-month {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+}
+
+.prev-month:hover,
+.next-month:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.prev-month {
+  order: -1;
+  /* 
+    use scale instead of rotation because 
+    sumbol is not vertically centered, 
+    so it's better to vertically flip 
+  */
+  transform: scale(-1, 1);
+}
+
+.calendar table {
+  width: 100%;
+  height: 250px;
+  padding: 15px 20px 30px;
+  font-size: 14px;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.calendar thead th {
+  padding-bottom: 5px;
+}
+
+.calendar td,
+.calendar th {
+  text-align: center;
+}
+
+/* sunday weekend highlight */
+.calendar td:last-child,
+.calendar th:last-child {
+  color: #f00;
+}
+
+.calendar td:last-child.day-today {
+  color: #fff;
+}
+
+.day {
+  cursor: pointer;
+}
+
+.day-dummy {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.day-today {
+  color: #fff;
+  background: #f00;
+  font-weight: bold;
+}
+
+.day-selected {
+  background: #eee;
+}
+
+.day-today.day-selected {
+  background: #999;
+}
