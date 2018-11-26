@@ -11,6 +11,7 @@ body {
     display: table;
     padding: 7px 7px 7px 7px;
     background-color: lightgray;
+    border: 2px #636e72 solid;
 }
 
 table {
@@ -95,6 +96,10 @@ td:hover:not(.disabled) {
 .today:after {
     font-size: 10px;
     content: '\aTODAY';
+}
+
+.today.disabled {
+    color: rgba(255,255,255,0.7);
 }
 
 .active:not(.disabled) {
