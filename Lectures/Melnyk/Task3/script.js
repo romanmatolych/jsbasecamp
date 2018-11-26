@@ -166,40 +166,35 @@ class Calendar {
     calendarWrapper.appendChild(header);
     calendarWrapper.appendChild(table);
 
-    calendar.appendChild(calendarWrapper);
+    this.calendar.appendChild(calendarWrapper);
   }
 
   /**
-   * Redraw calendar for prev month
+   * Sets date to prev month
    */
   prevMonth() {
     const prevMonthDate = new Date(this.year, this.month - 1);
     this.month = prevMonthDate.getMonth();
     this.year = prevMonthDate.getFullYear();
 
-    const monthName = new Date(this.year, this.month).toLocaleString(
-      this.locale,
-      {
-        month: "long"
-      }
-    );
-
-    this.calendar.querySelector("h3").textContent = `${monthName} ${this.year}`;
-
-    this.calendar.querySelector("tbody").remove();
-    this.calendar
-      .querySelector("table")
-      .appendChild(this.getTableBody(this.month, this.year));
+    this.redrawCalendar();
   }
 
   /**
-   * Redraw calendar for next month
+   * Sets date to next month
    */
   nextMonth() {
     const nextMonthDate = new Date(this.year, this.month + 1);
     this.month = nextMonthDate.getMonth();
     this.year = nextMonthDate.getFullYear();
 
+    this.redrawCalendar();
+  }
+
+  /**
+   * Redraws calendar (for next/prev month)
+   */
+  redrawCalendar() {
     const monthName = new Date(this.year, this.month).toLocaleString(
       this.locale,
       {
