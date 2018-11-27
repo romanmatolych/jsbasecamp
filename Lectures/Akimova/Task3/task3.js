@@ -81,7 +81,7 @@ class Calendar {
 	};
 
 	 /**
- 	 *
+ 	 *  Write calendar for current month
  	 *
   	 * @param {Number} year
   	 * @param {Number} month
@@ -136,7 +136,7 @@ class Calendar {
 				if (n === 5 || n === 6) {
 					td.classList.add("weekend");
 				}
-				if ( (q >= firstDay) && (v <= lastDay) ) {
+				if ((q >= firstDay) && (v <= lastDay)) {
 					td.textContent = v;
 					v++;
 				} else {
@@ -144,10 +144,23 @@ class Calendar {
 				td.classList.add("clear");
 				}
 				if(v - 1 === this.currentDay && month === date.getMonth() && year === date.getFullYear()) {
-					td.className = "today";
+					td.classList.add("today");
 				};
 				tr.appendChild(td);
 				q++;
+
+				// Highlight cell onclick
+				td.addEventListener('click', function(e) {
+					if (td.classList.contains("today")) {
+						e.target.bgColor = "transparent";
+					} else {
+						let elems = document.querySelectorAll(".active");
+  						[].forEach.call(elems, function(el) {
+   							 el.classList.remove("active");
+  						});
+ 						 e.target.className = "active";
+					}
+				})
 			};
 			tbody.appendChild(tr);
 		};
