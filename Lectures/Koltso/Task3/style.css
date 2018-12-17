@@ -1,0 +1,143 @@
+body {
+    font-size: 100%;
+    line-height: 1.5;
+    background-color: #28283b;
+    background-image: url(time.jpg);
+    background-size: cover;
+    color: #444444;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: baseline;
+}
+
+a {
+    text-decoration: none;
+  }
+.container {
+  width: 768px;
+  padding: 1.5em;
+  border: 1px solid #dcdcff;
+  border-radius: 5px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+table {
+  clear: both;
+  width: 100%;
+  border: 1px solid #dcdcff;
+  border-radius: 3px;
+  border-collapse: collapse;
+  color: #444;
+}
+td {
+  height: 48px;
+  text-align: center;
+  vertical-align: middle;
+  border-right: 1px solid #dcdcff;
+  border-top: 1px solid #dcdcff;
+  width: 14.28571429%;
+  transition: 0.5s;
+  cursor: pointer;
+  font-size: 18px;
+}
+td.days {
+  font-weight: bold;
+}
+
+td.normal:hover {
+  box-shadow: inset 0 0 10px  rgb(20, 126, 175);
+  transform: scale(1.15);
+  transition: 0.5s;
+
+}
+td.not-current {
+  color: #c0c0c0;
+}
+td.not-current.weekEnd {
+  color: rgba(255, 0, 0, 0.336);
+}
+td.not-current:hover {
+  box-shadow: inset 0 0 10px  rgb(20, 126, 175);
+  transform: scale(1.15);
+  transition: 0.5s;
+  cursor: not-allowed;
+}
+td.today {
+  font-weight: 700;
+  color: rgb(20, 126, 175);
+  font-size: 1.5em;
+}
+td.today::after {
+  content: 'Today';
+  display: block;
+  font-size: 10px;
+}
+td.today.active {
+  color: #ffffff;
+}
+td.today:hover {
+  transform: scale(1.15);
+}
+td.weekEnd {
+  color: #ff0000;
+  font-weight: bold;
+}
+thead td {
+  border: none;
+  color: #28283b;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+#prev {
+  left: 30px;
+  margin-bottom: 20px;
+}
+
+#next {
+  right: 30px;
+  margin-bottom: 20px;
+}
+
+#prev,
+#next {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 2em;
+  color: #c0c0c0;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+#prev:hover,
+#next:hover {
+  color: #28283b;
+  font-weight: bold;
+}
+
+.active {
+  background-color: rgb(20, 126, 175);
+  color: #ffffff;
+}
+
+@media (max-width: 992px) {
+  body {
+    overflow-y: scroll;
+  }
+}
