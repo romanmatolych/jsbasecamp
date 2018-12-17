@@ -1,0 +1,112 @@
+.calendar-wrapper {
+    width: 300px;
+    margin: 5em auto;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #a3b3ac;
+    box-shadow: 0px 0px 14px -3px rgba(74, 74, 74, 0.87);
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tbody>tr>td {
+    height: 43px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid #fff9f9;
+    width: 14.28571429%;
+    font-weight: bold;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+td.not-current {
+    color: #ffffff !important;
+    background-color: #eaeaea;
+}
+
+td.today {
+    color: #ffffff;
+    font-size: 1.5em;
+    background-color: #c3d4d6;
+    text-shadow: 1px 1px 1px #2b2b2b;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+tbody>tr>td:first-child {
+    color: red;
+}
+
+tbody>tr>td:last-child {
+    color: red;
+}
+
+thead>tr>td[class="titleMonth"] {
+    color: #FFFFFF !important;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #4e4e4e;
+    font-size: 18px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    top: -5px;
+    z-index: 9;
+    padding-bottom: 0px;
+}
+
+.days {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+button[class="rightButton"],
+button[class="leftButton"] {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    padding: -52px;
+    margin-bottom: -20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #4e4e4e;
+    z-index: 999;
+    position: relative;
+}
+
+.normal:hover {
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+button[class="rightButton"] {
+    float: left;
+    margin-left: 2%;
+}
+
+button[class="leftButton"] {
+    float: right;
+    margin-right: 2%;
+}
+
+button[class="rightButton"]:before {
+    content: url(img/rightArrow.png);
+}
+
+button[class="leftButton"]:before {
+    content: url(img/leftArrow.png);
+}
+
+.today .todayWord {
+    font-size: 10px;
+    float: left;
+    margin-left: 10px;
+}
