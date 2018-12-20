@@ -1,0 +1,14 @@
+.tic-tac-toe table, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.tic-tac-toe td {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+
+.tic-tac-toe .players {
+    user-select: none;
+}
