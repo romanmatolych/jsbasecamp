@@ -70,20 +70,21 @@ function DragManager(dragZone = document, dragTarget = document) {
 
         dragElement.clone.hidden = true; // Hide clone to get an element under the cursor
         const elem = document.elementFromPoint(event.clientX, event.clientY);
-        const droppable = elem.closest(".droppable");
         dragElement.clone.hidden = false;
-
         let keepDefault = true;
-        if (droppable && dragTarget.contains(elem)) {
-            const dragended = new CustomEvent("dragended", {
-                bubbles: true,
-                cancelable: true,
-                detail: {
-                    dragged: dragElement.dragged,
-                    droppable
-                }
-            });
-            keepDefault = dragTarget.dispatchEvent(dragended);
+        if (elem) {
+            const droppable = elem.closest(".droppable");
+            if (droppable && dragTarget.contains(elem)) {
+                const dragended = new CustomEvent("dragended", {
+                    bubbles: true,
+                    cancelable: true,
+                    detail: {
+                        dragged: dragElement.dragged,
+                        droppable
+                    }
+                });
+                keepDefault = dragTarget.dispatchEvent(dragended);
+            }
         }
 
         if (keepDefault) dragElement.clone.remove(); // Get rid of clone when operation is done
