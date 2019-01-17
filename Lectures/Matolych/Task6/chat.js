@@ -50,7 +50,8 @@ class Chat {
      * @param {Object} options Object with options such as elements where to display messages and a userlist
      */
     constructor(options = {}) {
-        if (!options.messages || !options.userlist) throw new Error("Not enough parts for a chat");
+        if ((!options.messages || !options.messages.nodeType) || 
+            (!options.userlist || !options.userlist.nodeType)) throw new Error("Invalid parts for a chat");
         this.messages = options.messages;
         this.userlist = options.userlist;
         this.members = [];

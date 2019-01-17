@@ -3,6 +3,10 @@ const chat = new Chat({
     userlist: document.querySelector(".chat-userlist"),
 });
 
+const MIN_TIME = 15, MAX_TIME = 30;
+const LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+const USER_OPT = "noinfo", TEXT_OPT = "lorem/p-1/20-35";
+
 const addUserButton = document.getElementById("add-user");
 addUserButton.addEventListener("click", () => {
     getRandomUserInfo(info => {
@@ -10,22 +14,32 @@ addUserButton.addEventListener("click", () => {
         chat.addNewUser(newUser);
 
         // Generate new messages for each user every random amount of time
-        const intervalTime = getRandomInteger(15, 30) * 1000;
+        const intervalTime = getRandomInteger(MIN_TIME, MAX_TIME) * 1000;
         let timer = setTimeout(function fn() {
             getRandomText(text => {
                 chat.postMessage(newUser, text);
-            });
+            },
+            xhr => {
+                console.error(`Error getting random text: ${xhr.status} ${xhr.statusText}`);
+                chat.postMessage(newUser, LOREM);
+            },
+            TEXT_OPT);
             timer = setTimeout(fn, intervalTime);
         }, intervalTime);
-    });
+    },
+    xhr => {
+        console.error(`Error getting random user: ${xhr.status} ${xhr.statusText}`);
+    },
+    USER_OPT);
 });
 
 /**
  * Fetches a randomly generated user using Random User Generator API
- * @param {Function} fn A callback function that is called when information is successfully received
+ * @param {Function} onsuccess A callback function that is called when information is successfully received
+ * @param {Function} onerror A callback function that is executed if the operation fails
+ * @param {string} [params] Extra parameters that you can add to a request
  */
-function getRandomUserInfo(fn) {
-    const params = "noinfo";
+function getRandomUserInfo(onsuccess, onerror, params = "") {
     get('https://randomuser.me/api/?' + params,
         data => {
             const result = JSON.parse(data);
@@ -36,27 +50,26 @@ function getRandomUserInfo(fn) {
             }
 
             const info = result.results[0];
-            fn(info);
-        },
-        xhr => {
-            console.error(`Error getting random user: ${xhr.status} ${xhr.statusText}`);
-        });
+            onsuccess(info);
+        }, 
+        onerror
+    );
 }
 
 /**
  * Fetches random text with RandomText
- * @param {Function} fn A callback function that is called when text is received
+ * @param {Function} onsuccess A callback function that is called when text is received
+ * @param {Function} onerror A callback function that is executed if the operation fails
+ * @param {string} [params] Extra parameters that you can add to a request
  */
-function getRandomText(fn) {
-    const params = "lorem/p-1/20-35";
+function getRandomText(onsuccess, onerror, params = "") {
     get("http://www.randomtext.me/api/" + params,
         data => {
             const text = JSON.parse(data).text_out;
-            fn(text);
+            onsuccess(text);
         },
-        xhr => {
-            console.error(`Error getting random text: ${xhr.status} ${xhr.statusText}`);
-        });
+        onerror
+    );
 }
 
 /**
