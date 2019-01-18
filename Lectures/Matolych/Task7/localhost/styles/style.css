@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    background-image: linear-gradient(#acb6e5, #86fde8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+/* aside and section */
+
+.picture {
+    border-radius: 50%;
+    background-color: white;
+}
+
+.subtitle {
+    min-width: 250px;
+}
+
+aside, section {
+    float: left;
+    padding: 15px;
+}
+
+aside {
+    max-width: 25%;
+}
+
+section {
+    max-width: 75%;
+}
+
+/* Delete top margin of first article's first child */
+article:first-child > :first-child {
+    margin-top: 0;
+}
+
+/* skills */
+
+.bar, .skill {
+    box-sizing: border-box;
+}
+
+.bar {
+    max-width: 35%;
+    background-color: #86fde8;
+}
+
+.skill {
+    padding: 10px; /* sizing of skill bars */
+}
+
+.js, .htmlcss, .node {
+    background-color: white;
+}
+
+.js {
+    width: 90%;
+}
+
+.htmlcss {
+    width: 70%;
+}
+
+.node {
+    width: 35%;
+}
+
+/* edu */
+
+.edu {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* interests */
+
+.interest {
+    border: 1px solid white;
+    padding: 5px;
+    display: inline-block;
+    margin: 3px;
+}
+
+/* languages */
+
+.checked {
+    color: #acb6e5;
+}
+
+.lang {
+    display: inline-block;
+    margin: 0 20px 20px 0;
+}
+
+.lang > p:first-child {
+    margin-top: 0;
+}
+
+/* feedback */
+
+article:last-child > :first-child {
+    margin-top: 0;
+}
+
+form label {
+    display: inline-block;
+    width: 75px;
+}
+
+label + input, label + textarea {
+    min-width: 25%;
+}
+
+input[type=submit] {
+    background-color: #acb6e5;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #99a5df;
+}

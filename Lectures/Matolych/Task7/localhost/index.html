@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 2</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <img src="images/me.jpg" width="250" class="picture" alt="Me"/>
+            <h1>Roman Matolych</h1>
+            <h4 class="subtitle">Lviv, Ukraine | romanmatolych@gmail.com</h4>
+        </aside>
+        <section>
+            <article>
+                <h2><i class="far fa-lightbulb"></i> Personal skills</h2>
+
+                <p>JavaScript</p>
+                <div class="bar">
+                    <div class="skill js"></div>
+                </div>
+                <p>HTML / CSS</p>
+                <div class="bar">
+                    <div class="skill htmlcss"></div>
+                </div>
+                <p>Node.js</p>
+                <div class="bar">
+                    <div class="skill node"></div>
+                </div>
+            </article>
+
+            <article>
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+    
+                <ul class="edu">
+                    <li>
+                        <p>2016 – Present</p>
+                        <p>Lviv Polytechnic National University | Institute of Computer Science and Information Technologies | Department of Software</p>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h2><i class="fas fa-paint-brush"></i> Interests</h2>
+
+                <span class="interest">Swimming</span>
+                <span class="interest">Programming</span>
+                <span class="interest">Hiking</span>
+                <span class="interest">Music</span>
+            </article>
+
+            <article>
+                <h2><i class="fas fa-language"></i> Languages</h2>
+
+                <div class="lang">
+                    <p>English</p>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star checked"></i>
+                </div>
+                <div class="lang">
+                    <p>Ukrainian</p>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="lang">
+                    <p>Russian</p>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star checked"></i>
+                </div>
+            </article>
+
+            <article>
+                <h2><i class="fas fa-envelope"></i> Contact me</h2>
+
+                <form action="action.php" method="POST">
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" maxlength="254" required>
+                    </p>
+                    <p>
+                        <label for="msg">Message:</label>
+                        <textarea id="msg" name="msg" maxlength="280"></textarea>
+                    </p>
+                    <p><input type="submit" value="Submit"></p>
+                </form>
+            </article>
+        </section>
+    </div>    
+</body>
+</html>
